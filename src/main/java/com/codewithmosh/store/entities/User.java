@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -44,9 +48,9 @@ public class User {
         address.setUser(null);
     }
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+    @JsonIgnore
     private Profile profile;
-
     @ManyToMany
     @JoinTable(
         name = "wishlist",
