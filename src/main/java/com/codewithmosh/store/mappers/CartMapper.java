@@ -5,10 +5,9 @@ import org.mapstruct.Mapping;
 
 import com.codewithmosh.store.dto.CartDto;
 import com.codewithmosh.store.dto.CartItemDto;
-import com.codewithmosh.store.dto.CartProductDto;
 import com.codewithmosh.store.entities.Cart;
 import com.codewithmosh.store.entities.CartItem;
-import com.codewithmosh.store.entities.Product;
+
 
 @Mapper(componentModel="spring")
 public interface CartMapper {
