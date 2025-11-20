@@ -1,7 +1,6 @@
 package com.codewithmosh.store.service;
 
 import java.util.UUID;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -22,21 +21,17 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CartService {
 
-    private CartRepository cartRepository;
+    private final CartRepository cartRepository;
 
-    private CartMapper cartMapper;
+    private  final CartMapper cartMapper;
 
-    private ProductRepository  productRepository;
+    private final  ProductRepository  productRepository;
 
 
     public CartDto createCartService(){
-
         var cart = new Cart();
-
         cartRepository.save(cart);
-
         var CartDto = cartMapper.toDto(cart);
-
         return CartDto;
       
     }

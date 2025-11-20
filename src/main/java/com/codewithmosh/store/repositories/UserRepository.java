@@ -2,9 +2,17 @@ package com.codewithmosh.store.repositories;
 
 import com.codewithmosh.store.entities.User;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByEmail(String email);
+
+
+
+
+     Optional<User> findByEmail(String Email);
+
 }

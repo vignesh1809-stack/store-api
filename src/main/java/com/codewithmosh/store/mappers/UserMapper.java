@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 import com.codewithmosh.store.dto.CreateUserRequest;
+import com.codewithmosh.store.dto.LoginUserDto;
 import com.codewithmosh.store.dto.UpdateUserRequest;
 import com.codewithmosh.store.dto.UserDto;
 import com.codewithmosh.store.entities.User;
@@ -12,6 +13,7 @@ import com.codewithmosh.store.entities.User;
 public interface UserMapper {
     UserDto todto(User user);
 
+    LoginUserDto toDto(User user);
 
     User toUser(CreateUserRequest request);
 
